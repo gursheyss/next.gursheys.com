@@ -34,13 +34,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.theme === 'light') {
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.style.setProperty('--background', '#ffffff');
+                } else {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.style.setProperty('--background', '#1a1a1a');
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <Grain />
@@ -50,7 +68,7 @@ export default function RootLayout({
             className="pointer-events-none absolute top-0 h-full w-full opacity-[2%] blur-[100px] saturate-150 filter"
             style={{
               backgroundImage:
-                "radial-gradient(at 27% 37%,#3a8bfd 0,transparent 0),radial-gradient(at 97% 21%,#72fe7d 0,transparent 50%),radial-gradient(at 52% 99%,#fd3a4e 0,transparent 50%),radial-gradient(at 10% 29%,#855afc 0,transparent 50%),radial-gradient(at 97% 96%,#e4c795 0,transparent 50%),radial-gradient(at 33% 50%,#8ca8e8 0,transparent 50%),radial-gradient(at 79% 53%,#eea5ba 0,transparent 50%)",
+                "linear-gradient(to bottom right,var(--background),#000)",
             }}
           />
         </ThemeProvider>
