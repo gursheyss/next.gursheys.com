@@ -4,6 +4,8 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Grain } from "@/components/Grain";
 import { Vignette } from "@/components/Vignette";
+import Header from "@/components/Header";
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,6 +39,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased`}
       >
+        <Script id="neko-config" strategy="beforeInteractive">
+          {`window.NekoType="rose"`}
+        </Script>
+        <Script
+          src="https://webneko.net/n20171213.js"
+          strategy="afterInteractive"
+        />
+        <Header />
         <Grain />
         <Vignette />
         {children}
