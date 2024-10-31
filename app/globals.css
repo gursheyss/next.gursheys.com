@@ -19,14 +19,6 @@ body {
   background: var(--background);
 }
 
-body.moon {
-  @apply text-[#E5E3E0];
-}
-
-body.sun {
-  @apply text-white;
-}
-
 .cutout-title {
   position: relative;
   padding-top: 2rem;
@@ -58,14 +50,6 @@ body.sun {
   margin: 1rem;
   position: relative;
   transition: border-color 0.5s ease;
-}
-
-body.moon .border-box {
-  border-color: #414649;
-}
-
-body.sun .border-box {
-  border-color: gray;
 }
 
 @keyframes sparkle {
