@@ -6,8 +6,10 @@ export default async function Music() {
   async function getData() {
     "use cache";
     cacheLife("days");
-    const playlists = await getPlaylists();
-    const topSongs = await getTopSongs();
+    const [playlists, topSongs] = await Promise.all([
+      getPlaylists(),
+      getTopSongs(),
+    ]);
     return { playlists, topSongs };
   }
   const { playlists, topSongs } = await getData();
