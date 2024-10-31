@@ -29,7 +29,7 @@ body {
   position: absolute;
   top: -0.9rem;
   left: 1rem;
-  background: #1a1a1a;
+  background: var(--background);
   padding: 0 0.5rem;
   z-index: 10;
 }
@@ -39,7 +39,7 @@ body {
   position: absolute;
   top: -0.9rem;
   right: 1rem;
-  background: #1a1a1a;
+  background: var(--background);
   padding: 0 0.5rem;
   z-index: 10;
 }
