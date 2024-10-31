@@ -9,13 +9,73 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a1a1a;
+    --foreground: #e5e3e0;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+body.moon {
+  @apply text-[#E5E3E0];
+}
+
+body.sun {
+  @apply text-white;
+}
+
+.cutout-title {
+  position: relative;
+  padding-top: 2rem;
+}
+
+.cutout-title::before {
+  content: attr(data-title);
+  position: absolute;
+  top: -0.9rem;
+  left: 1rem;
+  background: #1a1a1a;
+  padding: 0 0.5rem;
+  z-index: 10;
+}
+
+.cutout-title::after {
+  content: attr(data-right-title);
+  position: absolute;
+  top: -0.9rem;
+  right: 1rem;
+  background: #1a1a1a;
+  padding: 0 0.5rem;
+  z-index: 10;
+}
+
+.border-box {
+  border: 2px solid #414649;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: 1rem;
+  position: relative;
+  transition: border-color 0.5s ease;
+}
+
+body.moon .border-box {
+  border-color: #414649;
+}
+
+body.sun .border-box {
+  border-color: gray;
+}
+
+@keyframes sparkle {
+  0% {
+    border-color: theme("colors.pink");
+  }
+  50% {
+    border-color: lightgray;
+  }
+  100% {
+    border-color: theme("colors.pink");
+  }
 }

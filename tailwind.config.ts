@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const vignetteZIndex = 10;
 
 const config: Config = {
   content: [
@@ -11,6 +12,11 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        pink: "rgb(253, 207, 243)",
+      },
+      zIndex: {
+        vignette: `${vignetteZIndex}`,
+        aboveVignette: `${vignetteZIndex + 1}`,
       },
       fontFamily: {
         sans: "var(--font-geist-sans)",
