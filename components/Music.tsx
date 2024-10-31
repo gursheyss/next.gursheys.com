@@ -1,6 +1,9 @@
 import { getPlaylists, getTopSongs } from "@/lib/spotify";
 import { unstable_cacheLife as cacheLife } from "next/cache";
 import Image from "next/image";
+import NowPlaying from "./NowPlaying";
+import { Suspense } from "react";
+import LoadingState from "./LoadingState";
 
 export default async function Music() {
   async function getData() {
@@ -16,6 +19,9 @@ export default async function Music() {
   return (
     <div className="border-box cutout-title" data-title="📻 music">
       <div className="content">
+        <Suspense fallback={<LoadingState />}>
+          <NowPlaying />
+        </Suspense>
         {playlists && topSongs && (
           <>
             <div className="border-box cutout-title" data-title="playlists">
