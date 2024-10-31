@@ -11,7 +11,7 @@ export default function About() {
         </ul>
 
         <ul>
-          » i&apos;m a software engineering student at{" "}
+          » i&apos;m a junior software engineering student at{" "}
           <a
             className="text-pink hover:underline"
             href="https://www.sjsu.edu/"
