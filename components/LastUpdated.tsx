@@ -2,7 +2,7 @@ import { formatDistanceToNow } from "date-fns";
 
 export default async function LastUpdated() {
   const response = await fetch(
-    "https://api.github.com/repos/gursheyss/astro.gursheys.com",
+    "https://api.github.com/repos/gursheyss/next.gursheys.com",
     {
       headers: {
         Authorization: `token ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
