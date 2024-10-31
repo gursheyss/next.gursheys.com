@@ -10,7 +10,9 @@ export default async function LastUpdated() {
     }
   );
   const data = await response.json();
-  const lastUpdated = new Date(data.pushed_at).toLocaleDateString();
+  console.log(data.pushed_at);
+  const lastUpdated = new Date(data.pushed_at);
+  console.log(lastUpdated);
   const timeDifference = formatDistanceToNow(lastUpdated, { addSuffix: true });
   return (
     <>
