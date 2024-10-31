@@ -4,7 +4,6 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Grain } from "@/components/Grain";
 import { Vignette } from "@/components/Vignette";
-import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
