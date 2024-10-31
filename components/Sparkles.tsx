@@ -195,29 +195,8 @@ class SparkleEffect {
   }
 
   mouse(e: MouseEvent) {
-    this.set_scroll();
-    this.y = e.pageY + this.sdown;
-    this.x = e.pageX + this.sleft;
-  }
-
-  set_scroll() {
-    if (typeof self.pageYOffset === "number") {
-      this.sdown = self.pageYOffset;
-      this.sleft = self.pageXOffset;
-    } else if (document.body.scrollTop || document.body.scrollLeft) {
-      this.sdown = document.body.scrollTop;
-      this.sleft = document.body.scrollLeft;
-    } else if (
-      document.documentElement &&
-      (document.documentElement.scrollTop ||
-        document.documentElement.scrollLeft)
-    ) {
-      this.sleft = document.documentElement.scrollLeft;
-      this.sdown = document.documentElement.scrollTop;
-    } else {
-      this.sdown = 0;
-      this.sleft = 0;
-    }
+    this.y = e.clientY;
+    this.x = e.clientX;
   }
 
   set_width() {
