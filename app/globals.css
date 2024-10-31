@@ -44,23 +44,3 @@ body {
   position: relative;
   transition: border-color 0.5s ease;
 }
-
-body.moon .border-box {
-  border-color: #414649;
-}
-
-body.sun .border-box {
-  border-color: gray;
-}
-
-@keyframes sparkle {
-  0% {
-    border-color: theme("colors.pink");
-  }
-  50% {
-    border-color: lightgray;
-  }
-  100% {
-    border-color: theme("colors.pink");
-  }
-}
