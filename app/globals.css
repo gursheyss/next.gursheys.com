@@ -56,3 +56,7 @@ body {
 img[name="imageNeko0"] {
   @apply pixelated;
 }
+
+* {
+  cursor: url("/cursor.svg") 0 0, auto;
+}
