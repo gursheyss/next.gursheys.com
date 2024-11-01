@@ -1,5 +1,6 @@
 import { getNowPlaying } from "@/lib/spotify";
 import Image from "next/image";
+import PlayButton from "./PlayButton";
 
 export default async function NowPlaying() {
   const currentSong = await getNowPlaying();
@@ -25,12 +26,9 @@ export default async function NowPlaying() {
             >
               {currentSong.title}
             </a>
-            <button
-              className="play-button cursor-pointer"
-              aria-label="Toggle Play"
-            >
-              🔇
-            </button>
+            {currentSong.previewUrl && (
+              <PlayButton previewUrl={currentSong.previewUrl} />
+            )}
             <p className="text-xs text-gray-500">{currentSong.artist}</p>
           </div>
           <div
