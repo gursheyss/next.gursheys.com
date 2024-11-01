@@ -42,11 +42,11 @@ export default async function Music() {
                         width={48}
                         height={48}
                       />
-                      <div className="flex-grow">
-                        <p className="text-sm font-semibold">
+                      <div className="flex-grow min-w-0">
+                        <p className="text-sm font-semibold truncate">
                           {playlist.title.toLowerCase()}
                         </p>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-gray-500 truncate">
                           {playlist.count} tracks
                         </p>
                       </div>
@@ -73,11 +73,11 @@ export default async function Music() {
                         width={48}
                         height={48}
                       />
-                      <div className="ml-2">
-                        <p className="text-sm font-semibold">
+                      <div className="ml-2 min-w-0 flex-1">
+                        <p className="text-sm font-semibold truncate">
                           {song.title.toLowerCase()}
                         </p>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-gray-500 truncate">
                           {song.artist.toLowerCase()}
                         </p>
                       </div>
