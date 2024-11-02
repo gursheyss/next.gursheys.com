@@ -3,34 +3,34 @@ import Age from '@/components/Age'
 const ABOUT_CONTENT = {
   links: {
     sjsu: {
-      text: "sjsu",
-      url: "https://www.sjsu.edu/",
+      text: 'sjsu',
+      url: 'https://www.sjsu.edu/'
     },
     typescript: {
-      text: "typescript",
-      url: "https://www.typescriptlang.org/",
+      text: 'typescript',
+      url: 'https://www.typescriptlang.org/'
     },
     golang: {
-      text: "golang",
-      url: "https://golang.org/",
+      text: 'golang',
+      url: 'https://golang.org/'
     },
     nextjs: {
-      text: "nextjs",
-      url: "https://www.go.dev/",
+      text: 'nextjs',
+      url: 'https://www.go.dev/'
     },
     sveltekit: {
-      text: "sveltekit",
-      url: "https://kit.svelte.dev/",
-    },
+      text: 'sveltekit',
+      url: 'https://kit.svelte.dev/'
+    }
   },
   intro: "hi i'm gurshan",
   items: [
     "i'm a junior swe student at {sjsu}",
-    "i mainly work in {typescript}, {golang}, {nextjs}, and {sveltekit}",
+    'i mainly work in {typescript}, {golang}, {nextjs}, and {sveltekit}',
     "i'm also a youtube editor for a few channels",
-    "please contact me for my resume if you're interested :)",
-  ],
-};
+    "please contact me for my resume if you're interested :)"
+  ]
+}
 
 export default function About() {
   return (
