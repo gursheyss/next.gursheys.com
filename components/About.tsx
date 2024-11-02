@@ -1,10 +1,42 @@
 import Age from '@/components/Age'
 
+const ABOUT_CONTENT = {
+  links: {
+    sjsu: {
+      text: "sjsu",
+      url: "https://www.sjsu.edu/",
+    },
+    typescript: {
+      text: "typescript",
+      url: "https://www.typescriptlang.org/",
+    },
+    golang: {
+      text: "golang",
+      url: "https://golang.org/",
+    },
+    nextjs: {
+      text: "nextjs",
+      url: "https://www.go.dev/",
+    },
+    sveltekit: {
+      text: "sveltekit",
+      url: "https://kit.svelte.dev/",
+    },
+  },
+  intro: "hi i'm gurshan",
+  items: [
+    "i'm a junior swe student at {sjsu}",
+    "i mainly work in {typescript}, {golang}, {nextjs}, and {sveltekit}",
+    "i'm also a youtube editor for a few channels",
+    "please contact me for my resume if you're interested :)",
+  ],
+};
+
 export default function About() {
   return (
     <div className="border-box cutout-title" data-title="🌐 about">
       <div className="content">
-        <p>hi i&apos;m gurshan</p>
+        <p>{ABOUT_CONTENT.intro}</p>
 
         <ul>
           » i&apos;m <Age /> years old
@@ -14,10 +46,10 @@ export default function About() {
           » i&apos;m a junior software engineering student at{' '}
           <a
             className="text-pink hover:underline"
-            href="https://www.sjsu.edu/"
+            href={ABOUT_CONTENT.links.sjsu.url}
             target="_blank"
           >
-            sjsu
+            {ABOUT_CONTENT.links.sjsu.text}
           </a>
         </ul>
 
@@ -25,40 +57,39 @@ export default function About() {
           » i mainly work in{' '}
           <a
             className="text-pink hover:underline"
-            href="https://www.typescriptlang.org/"
+            href={ABOUT_CONTENT.links.typescript.url}
             target="_blank"
           >
-            typescript
+            {ABOUT_CONTENT.links.typescript.text}
           </a>
           ,{' '}
           <a
             className="text-pink hover:underline"
-            href="https://golang.org/"
+            href={ABOUT_CONTENT.links.golang.url}
             target="_blank"
           >
-            golang
+            {ABOUT_CONTENT.links.golang.text}
           </a>
           ,{' '}
           <a
             className="text-pink hover:underline"
-            href="https://www.go.dev/"
+            href={ABOUT_CONTENT.links.nextjs.url}
             target="_blank"
           >
-            nextjs
+            {ABOUT_CONTENT.links.nextjs.text}
           </a>
           , and{' '}
           <a
             className="text-pink hover:underline"
-            href="https://kit.svelte.dev/"
+            href={ABOUT_CONTENT.links.sveltekit.url}
             target="_blank"
           >
-            sveltekit
+            {ABOUT_CONTENT.links.sveltekit.text}
           </a>
         </ul>
 
-        <ul>» i&apos;m also a youtube editor for a few channels</ul>
-
-        <ul>please contact me for my resume if you&apos;re interested :)</ul>
+        <ul>{ABOUT_CONTENT.items[3]}</ul>
+        <ul>{ABOUT_CONTENT.items[4]}</ul>
       </div>
     </div>
   )
