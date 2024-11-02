@@ -11,7 +11,7 @@ export default async function NowPlaying() {
           <div className="relative h-16 w-16">
             <Image
               src={currentSong.image as string}
-              alt={currentSong.title}
+              alt={currentSong.title.toLowerCase()}
               fill
               className="rounded-sm object-cover"
               sizes="64px"
