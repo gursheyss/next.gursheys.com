@@ -1,4 +1,4 @@
-import Age from "@/components/Age";
+import Age from '@/components/Age'
 
 export default function About() {
   return (
@@ -11,7 +11,7 @@ export default function About() {
         </ul>
 
         <ul>
-          » i&apos;m a junior software engineering student at{" "}
+          » i&apos;m a junior software engineering student at{' '}
           <a
             className="text-pink hover:underline"
             href="https://www.sjsu.edu/"
@@ -22,7 +22,7 @@ export default function About() {
         </ul>
 
         <ul>
-          » i mainly work in{" "}
+          » i mainly work in{' '}
           <a
             className="text-pink hover:underline"
             href="https://www.typescriptlang.org/"
@@ -30,7 +30,7 @@ export default function About() {
           >
             typescript
           </a>
-          ,{" "}
+          ,{' '}
           <a
             className="text-pink hover:underline"
             href="https://golang.org/"
@@ -38,7 +38,7 @@ export default function About() {
           >
             golang
           </a>
-          ,{" "}
+          ,{' '}
           <a
             className="text-pink hover:underline"
             href="https://www.go.dev/"
@@ -46,7 +46,7 @@ export default function About() {
           >
             nextjs
           </a>
-          , and{" "}
+          , and{' '}
           <a
             className="text-pink hover:underline"
             href="https://kit.svelte.dev/"
@@ -61,5 +61,5 @@ export default function About() {
         <ul>please contact me for my resume if you&apos;re interested :)</ul>
       </div>
     </div>
-  );
+  )
 }

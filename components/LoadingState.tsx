@@ -8,5 +8,5 @@ export default function LoadingState() {
         </div>
       </div>
     </div>
-  );
+  )
 }

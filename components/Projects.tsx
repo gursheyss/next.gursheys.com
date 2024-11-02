@@ -11,14 +11,14 @@ const Projects = () => {
           <div className="content">
             <ul>
               <li>
-                »{" "}
+                »{' '}
                 <a
                   href="https://streamerstocks.org"
                   target="_blank"
                   className="text-pink hover:underline"
                 >
                   streamerstocks
-                </a>{" "}
+                </a>{' '}
                 is a simulated stock market based on twitch streamer
                 jasontheween&apos;s community that had over 3,500 users
               </li>
@@ -37,14 +37,14 @@ const Projects = () => {
           <div className="content">
             <ul>
               <li>
-                »{" "}
+                »{' '}
                 <a
                   href="https://github.com/gursheyss/MediTag"
                   target="_blank"
                   className="text-pink hover:underline"
                 >
                   meditag
-                </a>{" "}
+                </a>{' '}
                 is a web app that lets nurses access and interact with patient
                 data
               </li>
@@ -59,14 +59,14 @@ const Projects = () => {
           <div className="content">
             <ul>
               <li>
-                »{" "}
+                »{' '}
                 <a
                   href="/zipp"
                   target="_blank"
                   className="text-pink hover:underline"
                 >
                   zipp
-                </a>{" "}
+                </a>{' '}
                 is an encrypted file sharing service that implements aes-256 and
                 pbkdf2 encryption
               </li>
@@ -81,14 +81,14 @@ const Projects = () => {
           <div className="content">
             <ul>
               <li>
-                »{" "}
+                »{' '}
                 <a
                   href="https://github.com/gursheyss/austere"
                   target="_blank"
                   className="text-pink hover:underline"
                 >
                   austere
-                </a>{" "}
+                </a>{' '}
                 is a web server that&apos;s used to save and tag songs
               </li>
             </ul>
@@ -96,7 +96,7 @@ const Projects = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

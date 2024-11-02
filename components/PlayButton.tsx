@@ -1,25 +1,25 @@
-"use client";
+'use client'
 
-import { useState, useRef } from "react";
+import { useState, useRef } from 'react'
 
 export default function PlayButton({ previewUrl }: { previewUrl: string }) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
 
   const togglePlay = () => {
     if (!audioRef.current) {
-      audioRef.current = new Audio(previewUrl);
-      audioRef.current.volume = 0.1;
-      audioRef.current.onended = () => setIsPlaying(false);
+      audioRef.current = new Audio(previewUrl)
+      audioRef.current.volume = 0.1
+      audioRef.current.onended = () => setIsPlaying(false)
     }
 
     if (isPlaying) {
-      audioRef.current.pause();
+      audioRef.current.pause()
     } else {
-      audioRef.current.play();
+      audioRef.current.play()
     }
-    setIsPlaying(!isPlaying);
-  };
+    setIsPlaying(!isPlaying)
+  }
 
   return (
     <button
@@ -29,5 +29,5 @@ export default function PlayButton({ previewUrl }: { previewUrl: string }) {
     >
       {isPlaying ? '🔊' : '🔇'}
     </button>
-  );
-} 
+  )
+}

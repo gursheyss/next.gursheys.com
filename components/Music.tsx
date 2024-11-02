@@ -1,21 +1,21 @@
-import { getPlaylists, getTopSongs } from "@/lib/spotify";
-import { unstable_cacheLife as cacheLife } from "next/cache";
-import Image from "next/image";
-import NowPlaying from "./NowPlaying";
-import { Suspense } from "react";
-import LoadingState from "./LoadingState";
+import { getPlaylists, getTopSongs } from '@/lib/spotify'
+import { unstable_cacheLife as cacheLife } from 'next/cache'
+import Image from 'next/image'
+import NowPlaying from './NowPlaying'
+import { Suspense } from 'react'
+import LoadingState from './LoadingState'
 
 export default async function Music() {
   async function getData() {
-    "use cache";
-    cacheLife("days");
+    'use cache'
+    cacheLife('days')
     const [playlists, topSongs] = await Promise.all([
       getPlaylists(),
-      getTopSongs(),
-    ]);
-    return { playlists, topSongs };
+      getTopSongs()
+    ])
+    return { playlists, topSongs }
   }
-  const { playlists, topSongs } = await getData();
+  const { playlists, topSongs } = await getData()
   return (
     <div className="border-box cutout-title" data-title="📻 music">
       <div className="content">
@@ -42,11 +42,11 @@ export default async function Music() {
                         width={48}
                         height={48}
                       />
-                      <div className="flex-grow min-w-0">
-                        <p className="text-sm font-semibold truncate">
+                      <div className="min-w-0 flex-grow">
+                        <p className="truncate text-sm font-semibold">
                           {playlist.title.toLowerCase()}
                         </p>
-                        <p className="text-xs text-gray-500 truncate">
+                        <p className="truncate text-xs text-gray-500">
                           {playlist.count} tracks
                         </p>
                       </div>
@@ -74,10 +74,10 @@ export default async function Music() {
                         height={48}
                       />
                       <div className="ml-2 min-w-0 flex-1">
-                        <p className="text-sm font-semibold truncate">
+                        <p className="truncate text-sm font-semibold">
                           {song.title.toLowerCase()}
                         </p>
-                        <p className="text-xs text-gray-500 truncate">
+                        <p className="truncate text-xs text-gray-500">
                           {song.artist.toLowerCase()}
                         </p>
                       </div>
@@ -90,5 +90,5 @@ export default async function Music() {
         )}
       </div>
     </div>
-  );
+  )
 }

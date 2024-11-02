@@ -4,7 +4,7 @@ const Work = () => {
       <div className="content">
         <ul>
           <li>
-            » currently i&apos;m working on a video generation app called{" "}
+            » currently i&apos;m working on a video generation app called{' '}
             <a
               href="https://clip.studio/"
               className="text-pink hover:underline"
@@ -14,7 +14,7 @@ const Work = () => {
             </a>
           </li>
           <li>
-            » i&apos;m also an officer at{" "}
+            » i&apos;m also an officer at{' '}
             <a
               href="https://sce.sjsu.edu/"
               className="text-pink hover:underline"
@@ -26,7 +26,7 @@ const Work = () => {
             summer internship
           </li>
           <li>
-            » i also worked on{" "}
+            » i also worked on{' '}
             <a
               href="https://search.mobiusengine.ai"
               className="text-pink hover:underline"
@@ -39,7 +39,7 @@ const Work = () => {
         </ul>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Work;
+export default Work
