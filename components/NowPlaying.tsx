@@ -1,8 +1,9 @@
-import { getNowPlaying } from "@/lib/spotify";
-import Image from "next/image";
+import { getNowPlaying } from '@/lib/spotify'
+import Image from 'next/image'
+import PlayButton from './PlayButton'
 
 export default async function NowPlaying() {
-  const currentSong = await getNowPlaying();
+  const currentSong = await getNowPlaying()
   return (
     <div className="border-box cutout-title" data-title="now playing">
       {currentSong && currentSong.isPlaying ? (
@@ -10,7 +11,7 @@ export default async function NowPlaying() {
           <div className="relative h-16 w-16">
             <Image
               src={currentSong.image as string}
-              alt={currentSong.title}
+              alt={currentSong.title.toLowerCase()}
               fill
               className="rounded-sm object-cover"
               sizes="64px"
@@ -25,12 +26,9 @@ export default async function NowPlaying() {
             >
               {currentSong.title}
             </a>
-            <button
-              className="play-button cursor-pointer"
-              aria-label="Toggle Play"
-            >
-              🔇
-            </button>
+            {currentSong.previewUrl && (
+              <PlayButton previewUrl={currentSong.previewUrl} />
+            )}
             <p className="text-xs text-gray-500">{currentSong.artist}</p>
           </div>
           <div
@@ -43,7 +41,7 @@ export default async function NowPlaying() {
           <div className="flex-grow">
             <p className="text-sm font-semibold">not playing anything</p>
             <p className="text-xs text-gray-500">
-              but check out{" "}
+              but check out{' '}
               <a
                 href="https://open.spotify.com/user/qat10h1tw0e8pq7rkf3rui3d1?si=c51ff728c6ef47af"
                 target="_blank"
@@ -57,5 +55,5 @@ export default async function NowPlaying() {
         </div>
       )}
     </div>
-  );
+  )
 }

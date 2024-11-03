@@ -1,22 +1,22 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
-    ppr: "incremental",
+    ppr: 'incremental',
     reactCompiler: true,
-    dynamicIO: true,
+    dynamicIO: true
   },
   images: {
     remotePatterns: [
       {
-        hostname: "**.scdn.co",
+        hostname: '**.scdn.co'
       },
       {
-        hostname: "**.spotifycdn.com",
-      },
-    ],
-  },
-};
+        hostname: '**.spotifycdn.com'
+      }
+    ]
+  }
+}
 
-export default nextConfig;
+export default nextConfig

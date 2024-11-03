@@ -36,5 +36,5 @@ export default function Links() {
         </ul>
       </div>
     </div>
-  );
+  )
 }

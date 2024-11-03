@@ -53,10 +53,12 @@ body {
   -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
 }
 
-img[name="imageNeko0"] {
+img[name='imageNeko0'] {
   @apply pixelated;
 }
 
 * {
-  cursor: url("/cursor.svg") 0 0, auto;
+  cursor:
+    url('/cursor.svg') 0 0,
+    auto;
 }

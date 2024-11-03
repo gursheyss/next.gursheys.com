@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { Suspense } from "react";
-import LastUpdated from "./LastUpdated";
-import Image from "next/image";
+import Link from 'next/link'
+import { Suspense } from 'react'
+import LastUpdated from './LastUpdated'
+import Image from 'next/image'
 
 export default async function Header() {
   return (
-    <div className="relative flex items-center justify-between z-aboveVignette font-mono">
+    <div className="relative z-aboveVignette flex items-center justify-between font-mono">
       <div className="flex items-center space-x-1">
         <Link
           href="/"
@@ -27,5 +27,5 @@ export default async function Header() {
         </Suspense>
       </div>
     </div>
-  );
+  )
 }
