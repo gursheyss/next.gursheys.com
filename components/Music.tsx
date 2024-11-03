@@ -5,16 +5,17 @@ import NowPlaying from "./NowPlaying";
 import { Suspense } from "react";
 import LoadingState from "./LoadingState";
 
+async function getData() {
+  "use cache";
+  cacheLife("days");
+  const [playlists, topSongs] = await Promise.all([
+    getPlaylists(),
+    getTopSongs(),
+  ]);
+  return { playlists, topSongs };
+}
+
 export default async function Music() {
-  async function getData() {
-    "use cache";
-    cacheLife("days");
-    const [playlists, topSongs] = await Promise.all([
-      getPlaylists(),
-      getTopSongs(),
-    ]);
-    return { playlists, topSongs };
-  }
   const { playlists, topSongs } = await getData();
   return (
     <div className="border-box cutout-title" data-title="📻 music">
