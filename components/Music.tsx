@@ -10,8 +10,12 @@ export default function Music() {
         <Suspense fallback={<LoadingState />}>
           <NowPlaying />
         </Suspense>
-        <Playlists />
-        <TopSongs />
+        <Suspense>
+          <Playlists />
+        </Suspense>
+        <Suspense>
+          <TopSongs />
+        </Suspense>
       </div>
     </div>
   )
