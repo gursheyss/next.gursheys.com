@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <Script id="neko-config" strategy="beforeInteractive">
           {`window.NekoType="rose"`}
@@ -50,12 +50,14 @@ export default function RootLayout({
         />
         <Sparkles />
         <SnowfallEffect />
-        <Header />
+        <div className="flex flex-col flex-1">
+          <Header />
+          {children}
+        </div>
         <Grain />
         <Vignette />
-        {children}
         <div
-          className="pointer-events-none absolute top-0 h-full w-full opacity-[2%] blur-[100px] saturate-150 filter"
+          className="pointer-events-none fixed top-0 h-full w-full opacity-[2%] blur-[100px] saturate-150 filter"
           style={{
             backgroundImage:
               'radial-gradient(at 27% 37%,#3a8bfd 0,transparent 0),radial-gradient(at 97% 21%,#72fe7d 0,transparent 50%),radial-gradient(at 52% 99%,#fd3a4e 0,transparent 50%),radial-gradient(at 10% 29%,#855afc 0,transparent 50%),radial-gradient(at 97% 96%,#e4c795 0,transparent 50%),radial-gradient(at 33% 50%,#8ca8e8 0,transparent 50%),radial-gradient(at 79% 53%,#eea5ba 0,transparent 50%)'
