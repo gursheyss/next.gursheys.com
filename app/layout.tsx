@@ -7,6 +7,7 @@ import { Vignette } from '@/components/Vignette'
 import Header from '@/components/Header'
 import Script from 'next/script'
 import { Sparkles } from '@/components/Sparkles'
+import { SnowfallEffect } from '@/components/SnowfallEffect'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -48,6 +49,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <Sparkles />
+        <SnowfallEffect />
         <Header />
         <Grain />
         <Vignette />
