@@ -16,7 +16,21 @@ const nextConfig: NextConfig = {
         hostname: '**.spotifycdn.com'
       }
     ]
-  }
+  },
+  redirects: async () => {
+		return [
+			{
+				source: "/austere",
+				destination: "https://github.com/gursheyss/austere",
+				permanent: true,
+			},
+			{
+				source: "/zipp",
+				destination: "https://github.com/gursheyss/zipp",
+				permanent: true,
+			},
+		];
+	},
 }
 
 export default nextConfig
