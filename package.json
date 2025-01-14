@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@number-flow/react": "^0.4.4",
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
     "babel-plugin-react-compiler": "^19.0.0-beta-6fc168f-20241025",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",

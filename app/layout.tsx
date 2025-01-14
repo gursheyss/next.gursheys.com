@@ -8,6 +8,8 @@ import Header from '@/components/Header'
 import Script from 'next/script'
 import { Sparkles } from '@/components/Sparkles'
 import { SnowfallEffect } from '@/components/SnowfallEffect'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/react'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -39,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} flex min-h-screen flex-col antialiased`}
       >
         <Script id="neko-config" strategy="beforeInteractive">
           {`window.NekoType="rose"`}
@@ -48,9 +50,11 @@ export default function RootLayout({
           src="https://webneko.net/n20171213.js"
           strategy="afterInteractive"
         />
+        <SpeedInsights />
+        <Analytics />
         <Sparkles />
         <SnowfallEffect />
-        <div className="flex flex-col flex-1">
+        <div className="flex flex-1 flex-col">
           <Header />
           {children}
         </div>
