@@ -6,7 +6,7 @@ import Music from '@/components/Music'
 
 export default function Home() {
   return (
-    <main className="flex-1 relative z-aboveVignette mx-auto flex max-w-7xl flex-col justify-center font-mono px-2 lg:flex-row lg:px-0">
+    <main className="relative z-aboveVignette mx-auto flex max-w-7xl flex-1 flex-col justify-center px-2 font-mono lg:flex-row lg:px-0">
       <div className="w-full lg:w-2/3">
         <About />
         <Work />
@@ -14,7 +14,7 @@ export default function Home() {
       </div>
       <div className="w-full lg:w-1/3">
         <Links />
-        <Music />
+        {/* <Music /> */}
       </div>
     </main>
   )
