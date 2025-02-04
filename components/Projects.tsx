@@ -9,7 +9,7 @@ const PROJECTS_CONTENT = {
         url: 'https://streamerstocks.org'
       },
       description: [
-        "is a simulated stock market based on twitch streamer jasontheween's community"
+        "is a simulated stock market based on twitch streamer's community"
       ]
     },
     {
@@ -20,7 +20,7 @@ const PROJECTS_CONTENT = {
         url: 'https://github.com/gursheyss/MediTag'
       },
       description: [
-        'is a web app that lets nurses access and interact with patient data'
+        'is a web app i made for irvinehacks 2024 that lets nurses access and interact with patient data'
       ]
     },
     {
@@ -30,7 +30,9 @@ const PROJECTS_CONTENT = {
         text: 'zipp',
         url: '/zipp'
       },
-      description: ['is an encrypted file sharing service']
+      description: [
+        'is an encrypted file sharing service i made for my friends'
+      ]
     },
     {
       title: '🎵 austere',
@@ -39,7 +41,7 @@ const PROJECTS_CONTENT = {
         text: 'austere',
         url: 'https://github.com/gursheyss/austere'
       },
-      description: ['is a web server i use to save and tag unre']
+      description: ['is a web server i use to save and tag music']
     }
   ]
 }
