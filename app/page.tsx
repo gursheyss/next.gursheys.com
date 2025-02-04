@@ -2,7 +2,7 @@ import About from '@/components/About'
 import Links from '@/components/Links'
 import Work from '@/components/Work'
 import Projects from '@/components/Projects'
-// import Music from '@/components/Music'
+import Music from '@/components/Music'
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
       </div>
       <div className="w-full lg:w-1/3">
         <Links />
-        {/* <Music /> */}
+        <Music />
       </div>
     </main>
   )
