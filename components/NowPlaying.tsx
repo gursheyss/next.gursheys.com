@@ -1,13 +1,9 @@
 import { getNowPlaying } from '@/lib/spotify'
 import Image from 'next/image'
 import PlayButton from './PlayButton'
-import { unstable_cacheLife } from 'next/cache'
 
 export default async function NowPlaying() {
-  'use cache'
-  unstable_cacheLife('seconds')
   const currentSong = await getNowPlaying()
-
   return (
     <div className="border-box cutout-title" data-title="now playing">
       {currentSong?.isPlaying ? (

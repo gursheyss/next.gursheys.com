@@ -1,3 +1,5 @@
+import redis from './redis'
+
 const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID
 const SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET
 const SPOTIFY_REFRESH_TOKEN = process.env.SPOTIFY_REFRESH_TOKEN
@@ -67,6 +69,11 @@ async function getAccessToken(): Promise<string> {
     expires_in: number
   }
 
+  const cachedToken = await redis.get<string>('spotify_access_token')
+  if (cachedToken) {
+    return cachedToken
+  }
+
   const params = new URLSearchParams({
     grant_type: 'refresh_token',
     refresh_token: SPOTIFY_REFRESH_TOKEN as string
@@ -83,7 +90,10 @@ async function getAccessToken(): Promise<string> {
   if (!response.ok)
     throw new Error(`Failed to get access token: ${response.statusText}`)
 
-  const { access_token: accessToken } = (await response.json()) as TokenResponse
+  const { access_token: accessToken, expires_in: expiresIn } = (await response.json()) as TokenResponse
+
+  await redis.set('spotify_access_token', accessToken, { ex: expiresIn - 600 })
+
   return accessToken
 }
 
@@ -101,9 +111,9 @@ function getSongData(item: SpotifySong): Song {
 function getPlaylistData(item: SpotifyPlaylist): Playlist {
   const imageUrl = item.images
     ? item.images[2]?.url ||
-      item.images[1]?.url ||
-      item.images[0]?.url ||
-      'default_image_url'
+    item.images[1]?.url ||
+    item.images[0]?.url ||
+    'default_image_url'
     : 'default_image_url'
   return {
     image: imageUrl,
@@ -148,11 +158,11 @@ async function getPlaylists(): Promise<Playlist[]> {
     )
     const playlists = items
       ? items
-          .map(getPlaylistData)
-          .filter(
-            (playlist) =>
-              playlist.public && playlist.owner === 'qat10h1tw0e8pq7rkf3rui3d1'
-          )
+        .map(getPlaylistData)
+        .filter(
+          (playlist) =>
+            playlist.public && playlist.owner === 'qat10h1tw0e8pq7rkf3rui3d1'
+        )
       : []
     return playlists
   } catch (error) {
